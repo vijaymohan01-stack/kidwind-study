@@ -1,4 +1,17 @@
 const STORAGE_KEY = 'kidwind-progress';
+const USER_KEY = 'kidwind-user';
+
+export function getCurrentUser() {
+    return localStorage.getItem(USER_KEY) || null;
+}
+
+export function setCurrentUser(name) {
+    localStorage.setItem(USER_KEY, name.trim());
+}
+
+export function clearCurrentUser() {
+    localStorage.removeItem(USER_KEY);
+}
 
 function getProgress() {
     try {
@@ -74,18 +87,6 @@ export function getCategoryAccuracy(category) {
 export function isFlashcardMastered(questionId) {
     const p = getProgress();
     return p.flashcardsMastered.includes(questionId);
-}
-
-export function exportProgress() {
-    return JSON.stringify(getProgress(), null, 2);
-}
-
-export function importProgress(jsonStr) {
-    try {
-        const data = JSON.parse(jsonStr);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-        return true;
-    } catch { return false; }
 }
 
 export function resetProgress() {

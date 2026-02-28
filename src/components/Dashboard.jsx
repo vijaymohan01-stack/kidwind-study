@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { getStats, getCategoryAccuracy } from '../utils/progress'
 import { allQuestions, categories } from '../data/questions'
 
-export default function Dashboard() {
+export default function Dashboard({ userName }) {
     const [stats, setStats] = useState(null)
 
     useEffect(() => { setStats(getStats()) }, [])
@@ -13,7 +13,7 @@ export default function Dashboard() {
     return (
         <div className="animate-in">
             <div className="page-header">
-                <h2>📊 Dashboard</h2>
+                <h2>👋 Hey {userName}!</h2>
                 <p>Track your progress toward KidWind Worlds 2026</p>
             </div>
 
@@ -61,6 +61,7 @@ export default function Dashboard() {
             <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--font-size-xl)', fontWeight: 700 }}>Quick Start</h3>
             <div className="stats-grid">
                 {[
+                    { to: '/guide', icon: '📖', title: 'Study Guide', desc: 'Diagrams & key concepts' },
                     { to: '/flashcards', icon: '🃏', title: 'Flashcards', desc: 'Flip through terms and concepts' },
                     { to: '/quiz', icon: '✅', title: 'Multiple Choice', desc: 'Test your knowledge' },
                     { to: '/truefalse', icon: '⚖️', title: 'True / False', desc: 'Quick concept checks' },
