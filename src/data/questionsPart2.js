@@ -55,6 +55,36 @@ export const acdcQuestions = [
         question: 'A multimeter set to DC volts can accurately measure AC voltage.',
         answer: false, explanation: 'You must use the correct setting on the multimeter. DC volts (V—) for DC sources, AC volts (V~) for AC sources. Using the wrong setting will give inaccurate readings.'
     },
+    // New AC/DC questions
+    {
+        id: 'acdc11', category: 'AC/DC & Rectifiers', difficulty: 1, type: 'flashcard',
+        question: 'What does Hz (Hertz) measure?',
+        answer: 'The frequency of AC current — how many times per second the current reverses direction',
+        explanation: 'In the US, electricity is 60 Hz, meaning the current changes direction 60 times per second. In Europe, it\'s 50 Hz. A generator\'s output frequency depends on how fast it spins.'
+    },
+    {
+        id: 'acdc12', category: 'AC/DC & Rectifiers', difficulty: 2, type: 'multiple-choice',
+        question: 'What is a bridge rectifier?',
+        choices: ['A bridge that conducts electricity', 'A circuit of four diodes that converts AC to DC', 'A device that stores electricity', 'A type of generator'],
+        answer: 'A circuit of four diodes that converts AC to DC', explanation: 'A bridge rectifier uses 4 diodes arranged in a diamond pattern to convert both halves of the AC wave to DC, which is more efficient than a half-wave rectifier that only uses one half.'
+    },
+    {
+        id: 'acdc13', category: 'AC/DC & Rectifiers', difficulty: 3, type: 'flashcard',
+        question: 'What is a transformer and why is it important for power distribution?',
+        answer: 'A device that changes AC voltage levels — essential for efficient long-distance power transmission',
+        explanation: 'Transformers can step voltage up (for transmission) or down (for home use). Power lines carry electricity at very high voltage (100,000+ V) to reduce current and line losses. Transformers only work with AC, which is why AC won the "War of Currents."'
+    },
+    {
+        id: 'acdc14', category: 'AC/DC & Rectifiers', difficulty: 3, type: 'multiple-choice',
+        question: 'Why does power loss in transmission lines increase with higher current?',
+        choices: ['It doesn\'t increase', 'Power loss = I²R — it increases with the SQUARE of current', 'Higher current makes wires expand', 'More current means more sparking'],
+        answer: 'Power loss = I²R — it increases with the SQUARE of current', explanation: 'Power lost as heat in wires = I²R. Doubling the current quadruples the power loss. This is why electricity is transmitted at high voltage and low current — reducing I dramatically reduces losses.'
+    },
+    {
+        id: 'acdc15', category: 'AC/DC & Rectifiers', difficulty: 1, type: 'true-false',
+        question: 'A battery produces alternating current (AC).',
+        answer: false, explanation: 'Batteries produce direct current (DC) — the current flows in only one direction. The chemical reaction inside the battery creates a steady voltage that pushes electrons one way through the circuit.'
+    },
 ];
 
 export const gearRatioQuestions = [
@@ -103,6 +133,36 @@ export const gearRatioQuestions = [
         answer: '2.4', formula: 'Gen RPM = 60×5 = 300; Voltage = 300×(0.8/100)', units: 'volts',
         explanation: 'Generator RPM = 60 × 5 = 300 RPM. Voltage = 300 × (0.8/100) = 300 × 0.008 = 2.4 volts.'
     },
+    // New gear ratio questions
+    {
+        id: 'gear9', category: 'Gear Ratios', difficulty: 1, type: 'flashcard',
+        question: 'What is torque?',
+        answer: 'A twisting or turning force — the force that causes rotation',
+        explanation: 'Think of turning a wrench: the force you apply times the distance from the bolt is the torque. In wind turbines, the wind exerts torque on the blades, which must overcome the resistance of the generator and gearbox.'
+    },
+    {
+        id: 'gear10', category: 'Gear Ratios', difficulty: 2, type: 'true-false',
+        question: 'A direct-drive wind turbine has no gearbox.',
+        answer: true, explanation: 'Some large modern turbines use "direct drive" generators that work at low RPM, eliminating the gearbox entirely. This reduces mechanical complexity and maintenance but requires a larger, heavier generator.'
+    },
+    {
+        id: 'gear11', category: 'Gear Ratios', difficulty: 3, type: 'multiple-choice',
+        question: 'A KidWind turbine with a 10:1 gear ratio can\'t start spinning in light wind. What should you try?',
+        choices: ['Increase the gear ratio to 15:1', 'Decrease the gear ratio (e.g., to 5:1)', 'Remove the blades', 'Add more blades of the same design'],
+        answer: 'Decrease the gear ratio (e.g., to 5:1)', explanation: 'A lower gear ratio requires less torque to start spinning. In light wind, the blades can\'t produce enough torque for a high-ratio gearbox. Lowering the ratio trades generator RPM for the ability to spin in lighter winds.'
+    },
+    {
+        id: 'gear12', category: 'Gear Ratios', difficulty: 3, type: 'flashcard',
+        question: 'What is a compound gear train?',
+        answer: 'Multiple pairs of gears connected together to achieve higher total gear ratios',
+        explanation: 'Two gear pairs of 4:1 each, connected together, create a total ratio of 4 × 4 = 16:1. Wind turbine gearboxes typically use compound gear trains (often planetary gears) to achieve ratios of 100:1 or more.'
+    },
+    {
+        id: 'gear13', category: 'Gear Ratios', difficulty: 2, type: 'formula',
+        question: 'A driving gear has 48 teeth and the driven gear has 12 teeth. If the driving gear spins at 80 RPM, how fast does the driven gear spin?',
+        answer: '320', formula: 'Ratio = 48/12 = 4; Output RPM = 80 × 4', units: 'RPM',
+        explanation: 'Gear ratio = 48/12 = 4:1. The driven gear spins 4 times faster: 80 × 4 = 320 RPM.'
+    },
 ];
 
 export const betzLimitQuestions = [
@@ -145,6 +205,36 @@ export const betzLimitQuestions = [
         question: 'What factors cause real turbines to perform below the Betz Limit?',
         answer: 'Blade drag, generator losses, gearbox friction, tip losses, wake effects, and non-ideal blade shapes',
         explanation: 'Every component introduces some energy loss. The Betz Limit assumes perfect conditions with no friction, perfect blade shapes, and no tip losses. Reality always falls short.'
+    },
+    // New Betz Limit questions
+    {
+        id: 'betz8', category: 'Betz Limit & Efficiency', difficulty: 1, type: 'true-false',
+        question: 'The Betz Limit applies to all types of wind turbines, both HAWTs and VAWTs.',
+        answer: true, explanation: 'The Betz Limit is a fundamental physical law that applies to ANY device extracting energy from a moving fluid stream. No rotor design — horizontal, vertical, or anything else — can exceed 59.3% efficiency.'
+    },
+    {
+        id: 'betz9', category: 'Betz Limit & Efficiency', difficulty: 2, type: 'flashcard',
+        question: 'What are "tip losses" in a wind turbine?',
+        answer: 'Energy lost at the blade tips where high-pressure air leaks around to the low-pressure side, creating tip vortices',
+        explanation: 'At the blade tip, air from the high-pressure bottom side curls around to the low-pressure top side, creating swirling vortices. These vortices waste energy and reduce efficiency, similar to wingtip vortices on airplanes.'
+    },
+    {
+        id: 'betz10', category: 'Betz Limit & Efficiency', difficulty: 3, type: 'multiple-choice',
+        question: 'At what ratio of downstream to upstream wind speed does the Betz Limit occur?',
+        choices: ['0 (air completely stops)', '1/3', '1/2', '2/3'],
+        answer: '1/3', explanation: 'The Betz Limit is achieved when the wind leaving the turbine is exactly 1/3 the speed of the incoming wind. At this optimal ratio, the turbine extracts the maximum possible energy from the airstream.'
+    },
+    {
+        id: 'betz11', category: 'Betz Limit & Efficiency', difficulty: 3, type: 'flashcard',
+        question: 'What is the capacity factor of a wind turbine?',
+        answer: 'The ratio of actual energy produced over time to the maximum possible if running at full capacity 24/7 (typically 25-45%)',
+        explanation: 'A turbine rated at 2 MW that produces an average of 700 kW has a capacity factor of 35%. Wind doesn\'t blow at rated speed all the time, so capacity factors are always less than 100%. Offshore wind farms often have higher capacity factors (40-50%).'
+    },
+    {
+        id: 'betz12', category: 'Betz Limit & Efficiency', difficulty: 2, type: 'multiple-choice',
+        question: 'A KidWind model turbine is about 10% efficient. What does this mean?',
+        choices: ['It captures 10% of the Betz Limit', 'It converts 10% of the wind\'s kinetic energy to electricity', 'It works 10% of the time', 'It uses 10% of the wind'],
+        answer: 'It converts 10% of the wind\'s kinetic energy to electricity', explanation: 'Overall efficiency includes aerodynamic losses, mechanical losses (friction, gearbox), and electrical losses (generator). A 10% efficiency means 90% of the available wind energy is lost to these various factors.'
     },
 ];
 
@@ -214,6 +304,41 @@ export const turbineDesignQuestions = [
         choices: ['To save material cost', 'The tip moves faster so needs a smaller chord for optimal performance', 'For aesthetics', 'To reduce noise only'],
         answer: 'The tip moves faster so needs a smaller chord for optimal performance', explanation: 'The tip moves much faster than the root, encountering more relative wind. A smaller chord (width) at the tip maintains the correct angle of attack and prevents excessive drag at high tip speeds.'
     },
+    // New turbine design questions
+    {
+        id: 'td13', category: 'Turbine Design', difficulty: 1, type: 'multiple-choice',
+        question: 'What is the hub of a wind turbine?',
+        choices: ['The base of the tower', 'The center piece that connects the blades to the shaft', 'The generator', 'The gearbox'],
+        answer: 'The center piece that connects the blades to the shaft', explanation: 'The hub is the central component that attaches the blades to the main shaft. Together the hub and blades form the "rotor." In pitch-controlled turbines, the hub also contains mechanisms to rotate each blade.'
+    },
+    {
+        id: 'td14', category: 'Turbine Design', difficulty: 2, type: 'true-false',
+        question: 'More blades on a wind turbine always means more power.',
+        answer: false, explanation: 'Adding more blades increases drag and blade interference (each blade runs in the wake/disturbed air of the previous one). The optimal is usually 2-3 blades. More blades produce more torque but less speed, and overall efficiency drops.'
+    },
+    {
+        id: 'td15', category: 'Turbine Design', difficulty: 3, type: 'flashcard',
+        question: 'What is a Savonius wind turbine?',
+        answer: 'A simple VAWT that uses scooped/cupped blades and primarily operates on drag force rather than lift',
+        explanation: 'Savonius turbines look like a split cylinder. They\'re simple to build but less efficient than lift-based turbines. They produce high torque at low speeds, making them good for water pumping but not electricity generation.'
+    },
+    {
+        id: 'td16', category: 'Turbine Design', difficulty: 3, type: 'multiple-choice',
+        question: 'What is a Darrieus wind turbine?',
+        choices: ['A type of HAWT', 'A lift-based VAWT with curved or straight vertical blades', 'A turbine that runs on solar power', 'A very old-fashioned windmill'],
+        answer: 'A lift-based VAWT with curved or straight vertical blades', explanation: 'Darrieus turbines are VAWTs that use airfoil-shaped blades to generate lift. They\'re more efficient than Savonius but less efficient than HAWTs. The "eggbeater" shape is a classic Darrieus design.'
+    },
+    {
+        id: 'td17', category: 'Turbine Design', difficulty: 2, type: 'flashcard',
+        question: 'What is yaw control?',
+        answer: 'The system that rotates the nacelle to keep the rotor facing into the wind',
+        explanation: 'Large HAWTs have a yaw motor that turns the nacelle on top of the tower. Wind direction sensors detect changes and the yaw system rotates the turbine to face the wind for maximum energy capture.'
+    },
+    {
+        id: 'td18', category: 'Turbine Design', difficulty: 1, type: 'fill-blank',
+        question: 'The blades and hub together form the _____ of a wind turbine.',
+        answer: 'rotor', explanation: 'The rotor is the spinning assembly consisting of the blades attached to the hub. The rotor is connected to the main shaft, which transfers mechanical energy to the gearbox and generator.'
+    },
 ];
 
 export const environmentQuestions = [
@@ -261,6 +386,35 @@ export const environmentQuestions = [
         answer: 'Consistent high wind speeds, open terrain, proximity to power grid, minimal environmental impact',
         explanation: 'Wind farms are ideally placed on ridgelines, plains, or offshore where winds are strong and steady. They must also consider wildlife habitats, nearby communities, and connection to the existing power grid.'
     },
+    // New environment questions
+    {
+        id: 'env9', category: 'Energy & Environment', difficulty: 1, type: 'true-false',
+        question: 'Wind energy is the fastest-growing source of electricity worldwide.',
+        answer: false, explanation: 'Solar energy has recently surpassed wind as the fastest-growing source of electricity, though wind remains one of the top growing renewable sources. Both solar and wind are growing much faster than fossil fuels.'
+    },
+    {
+        id: 'env10', category: 'Energy & Environment', difficulty: 3, type: 'flashcard',
+        question: 'What is the "carbon payback period" for a wind turbine?',
+        answer: 'The time it takes for the turbine to generate enough clean energy to offset the carbon emissions from its manufacturing — typically 6-12 months',
+        explanation: 'Although building a turbine creates some CO₂ (mining materials, manufacturing, transportation), a typical wind turbine generates enough clean energy in about 6-12 months to "pay back" those emissions. It then produces zero-emission electricity for 20-30 more years.'
+    },
+    {
+        id: 'env11', category: 'Energy & Environment', difficulty: 2, type: 'multiple-choice',
+        question: 'What is offshore wind energy?',
+        choices: ['Wind turbines built near the coast on land', 'Wind turbines installed in bodies of water', 'Wind energy stored offshore', 'Wind power exported to other countries'],
+        answer: 'Wind turbines installed in bodies of water', explanation: 'Offshore wind farms are built in oceans, seas, or large lakes. The wind is typically stronger and more consistent over water. Though more expensive to build, offshore turbines produce significantly more energy.'
+    },
+    {
+        id: 'env12', category: 'Energy & Environment', difficulty: 3, type: 'true-false',
+        question: 'A single large modern wind turbine can power approximately 1,500 average US homes.',
+        answer: true, explanation: 'A modern 3 MW wind turbine operating at about 30-35% capacity factor produces enough electricity annually to power roughly 1,500 average US homes. Larger 12-15 MW offshore turbines can power 5,000+ homes.'
+    },
+    {
+        id: 'env13', category: 'Energy & Environment', difficulty: 3, type: 'flashcard',
+        question: 'What is "energy storage" and why is it important for wind energy?',
+        answer: 'Technology (like batteries) that saves excess wind energy for use when the wind isn\'t blowing',
+        explanation: 'Wind doesn\'t always blow when electricity is needed. Energy storage — using batteries, pumped hydro, compressed air, or hydrogen — can save excess wind energy and release it during calm periods, making wind power more reliable.'
+    },
 ];
 
 export const competitionQuestions = [
@@ -304,4 +458,35 @@ export const competitionQuestions = [
         answer: 'Judges evaluate your design process — documenting shows your thinking, testing, and improvements',
         explanation: 'Good documentation shows judges how you researched, designed, tested, and iterated your turbine. It demonstrates scientific thinking and engineering practices, which are heavily weighted in scoring.'
     },
+    // New competition questions
+    {
+        id: 'comp8', category: 'KidWind Competition', difficulty: 1, type: 'multiple-choice',
+        question: 'What tool is commonly used to test KidWind turbines?',
+        choices: ['A hairdryer', 'A wind tunnel with a large fan', 'An outdoor hilltop', 'A vacuum cleaner'],
+        answer: 'A wind tunnel with a large fan', explanation: 'KidWind competitions use standardized wind tunnels with large fans to test turbines under consistent, repeatable wind conditions. All teams test in the same tunnel so results are comparable.'
+    },
+    {
+        id: 'comp9', category: 'KidWind Competition', difficulty: 2, type: 'true-false',
+        question: 'In KidWind, the team with the highest power output always wins the competition.',
+        answer: false, explanation: 'KidWind scoring includes multiple categories: power output, design presentation, knowledge test, and instant challenges. A team with moderate power but excellent presentation and knowledge can beat a team with the highest power output.'
+    },
+    {
+        id: 'comp10', category: 'KidWind Competition', difficulty: 2, type: 'flashcard',
+        question: 'What is the engineering design process used in KidWind?',
+        answer: 'Ask → Research → Imagine → Plan → Create → Test → Improve → Share',
+        explanation: 'This iterative process guides teams from understanding the problem through designing, building, and improving their turbine. Judges look for evidence that teams followed this process and iterated on their design.'
+    },
+    {
+        id: 'comp11', category: 'KidWind Competition', difficulty: 3, type: 'flashcard',
+        question: 'What should a good KidWind presentation include?',
+        answer: 'Problem statement, research, design rationale, testing data, iterations/improvements, and what you learned',
+        explanation: 'Strong presentations show judges your engineering process. Explain WHY you made design choices (not just what you built), show data from testing, describe how you improved after each test, and reflect on lessons learned.'
+    },
+    {
+        id: 'comp12', category: 'KidWind Competition', difficulty: 3, type: 'multiple-choice',
+        question: 'Your turbine generates good power but vibrates badly. What is the most likely cause?',
+        choices: ['The wind is too strong', 'The blades are unbalanced or asymmetric', 'The tower is too tall', 'The generator is broken'],
+        answer: 'The blades are unbalanced or asymmetric', explanation: 'Vibration usually means the rotor is unbalanced — blades are different weights, shapes, or angles. This creates uneven forces as the rotor spins. Careful blade matching and balancing reduces vibration and improves performance.'
+    },
 ];
+

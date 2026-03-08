@@ -79,6 +79,54 @@ export const aerodynamicsQuestions = [
         question: 'A flat plate can generate as much lift as a properly shaped airfoil.',
         answer: false, explanation: 'A properly shaped airfoil generates significantly more lift and less drag than a flat plate. The curved shape is specifically designed to optimize the pressure difference between the top and bottom surfaces.'
     },
+    // New aerodynamics questions
+    {
+        id: 'aero15', category: 'Aerodynamics', difficulty: 1, type: 'multiple-choice',
+        question: 'Which surface of an airfoil has lower air pressure when generating lift?',
+        choices: ['The bottom surface', 'The top surface', 'Both surfaces equally', 'Neither surface'],
+        answer: 'The top surface', explanation: 'Air moves faster over the curved top surface, creating lower pressure (Bernoulli\'s principle). The higher pressure on the bottom pushes the blade upward, generating lift.'
+    },
+    {
+        id: 'aero16', category: 'Aerodynamics', difficulty: 2, type: 'flashcard',
+        question: 'What is a boundary layer in aerodynamics?',
+        answer: 'The thin layer of air immediately touching the blade surface where friction slows the flow',
+        explanation: 'Right at the blade surface, air velocity is zero due to friction. This thin layer where the air speeds up from zero to the free-stream velocity is the boundary layer. It affects drag and can cause flow separation.'
+    },
+    {
+        id: 'aero17', category: 'Aerodynamics', difficulty: 3, type: 'flashcard',
+        question: 'What is the wake effect in a wind farm?',
+        answer: 'Downwind turbines receive slower, more turbulent air from upstream turbines, reducing their power output',
+        explanation: 'A turbine extracts energy from the wind, leaving a "wake" of slower, more turbulent air behind it. Turbines placed in this wake can produce 10-40% less power. Proper spacing (5-10 rotor diameters) minimizes this.'
+    },
+    {
+        id: 'aero18', category: 'Aerodynamics', difficulty: 3, type: 'multiple-choice',
+        question: 'What is the primary reason modern wind turbine blades are so long?',
+        choices: ['To look impressive', 'Swept area increases with the square of blade length, capturing much more energy', 'Longer blades are cheaper to make', 'They need to reach faster wind higher up'],
+        answer: 'Swept area increases with the square of blade length, capturing much more energy',
+        explanation: 'Power is proportional to swept area (A = πr²). Doubling blade length quadruples the swept area and roughly quadruples the energy captured. This is why modern blades can exceed 100 meters.'
+    },
+    {
+        id: 'aero19', category: 'Aerodynamics', difficulty: 1, type: 'fill-blank',
+        question: 'The two main aerodynamic forces acting on a wind turbine blade are lift and _____.',
+        answer: 'drag', explanation: 'Lift is the useful force perpendicular to the airflow that makes blades spin. Drag is the resistance force parallel to the airflow that opposes motion. Good blade design maximizes lift and minimizes drag.'
+    },
+    {
+        id: 'aero20', category: 'Aerodynamics', difficulty: 2, type: 'multiple-choice',
+        question: 'What happens to wind power if the wind speed doubles?',
+        choices: ['Power doubles', 'Power quadruples', 'Power increases 8 times', 'Power stays the same'],
+        answer: 'Power increases 8 times', explanation: 'Wind power is proportional to the cube of wind speed (P ∝ v³). So doubling the wind speed means 2³ = 8 times more power available. This is why even small increases in wind speed matter a lot.'
+    },
+    {
+        id: 'aero21', category: 'Aerodynamics', difficulty: 3, type: 'true-false',
+        question: 'Wind power is proportional to the square of wind speed.',
+        answer: false, explanation: 'Wind power is proportional to the CUBE (third power) of wind speed: P = ½ρAv³. If wind speed doubles, available power increases by 2³ = 8 times. This cubic relationship is one of the most important concepts in wind energy.'
+    },
+    {
+        id: 'aero22', category: 'Aerodynamics', difficulty: 3, type: 'formula',
+        question: 'If wind speed increases from 5 m/s to 10 m/s, by what factor does the available wind power increase?',
+        answer: '8', formula: 'Factor = (v₂/v₁)³ = (10/5)³ = 2³', units: 'times',
+        explanation: 'Wind power scales with the cube of velocity. (10/5)³ = 2³ = 8. The wind power increases by a factor of 8 when wind speed doubles.'
+    },
 ];
 
 export const angleOfAttackQuestions = [
@@ -133,6 +181,47 @@ export const angleOfAttackQuestions = [
         question: 'What is the chord line of an airfoil?',
         answer: 'An imaginary straight line from the leading edge to the trailing edge of the airfoil',
         explanation: 'The chord line is used as a reference to measure the angle of attack. It runs from the front (leading edge) to the back (trailing edge) of the blade cross-section.'
+    },
+    // New angle of attack questions
+    {
+        id: 'aoa10', category: 'Angle of Attack', difficulty: 2, type: 'true-false',
+        question: 'The angle of attack stays the same along the entire length of a non-twisted blade.',
+        answer: false, explanation: 'Even on a non-twisted blade, the effective angle of attack varies from root to tip because the blade tip moves faster. This is exactly why blades are twisted — to compensate and maintain optimal angles everywhere.'
+    },
+    {
+        id: 'aoa11', category: 'Angle of Attack', difficulty: 1, type: 'multiple-choice',
+        question: 'What is the leading edge of an airfoil?',
+        choices: ['The back edge where air leaves', 'The front edge where air first hits the blade', 'The top surface', 'The bottom surface'],
+        answer: 'The front edge where air first hits the blade', explanation: 'The leading edge is the front of the airfoil that first meets the incoming air. The back where air departs is the trailing edge. Together they define the chord line.'
+    },
+    {
+        id: 'aoa12', category: 'Angle of Attack', difficulty: 3, type: 'flashcard',
+        question: 'What is "stall regulation" in wind turbines?',
+        answer: 'A passive control method where blade shape is designed to stall automatically in high winds, limiting power',
+        explanation: 'Stall-regulated turbines have fixed blades designed to gradually stall as wind speeds increase beyond rated speed. This naturally limits power output without active pitch control mechanisms.'
+    },
+    {
+        id: 'aoa13', category: 'Angle of Attack', difficulty: 3, type: 'multiple-choice',
+        question: 'At the blade root, the effective angle of attack is typically:',
+        choices: ['Smaller than at the tip', 'Larger than at the tip', 'The same as the tip', 'Zero degrees'],
+        answer: 'Larger than at the tip', explanation: 'The root moves slowly (small circle), so the relative wind comes more from the front. The tip moves fast (large circle), so relative wind comes more from the side. Blades are twisted with more angle at the root to compensate.'
+    },
+    {
+        id: 'aoa14', category: 'Angle of Attack', difficulty: 2, type: 'flashcard',
+        question: 'What is the trailing edge of an airfoil?',
+        answer: 'The rear edge of the blade where the upper and lower airflow rejoin',
+        explanation: 'The trailing edge is the thin, sharp back edge of the airfoil. Air flowing over the top and bottom surfaces meets again here. A sharp trailing edge helps reduce drag.'
+    },
+    {
+        id: 'aoa15', category: 'Angle of Attack', difficulty: 3, type: 'true-false',
+        question: 'A negative angle of attack means the blade will always produce negative lift (downward force).',
+        answer: false, explanation: 'Cambered (curved) airfoils can still produce positive lift at slightly negative angles of attack because their curved shape inherently creates a pressure difference. Only at more negative angles does lift become negative.'
+    },
+    {
+        id: 'aoa16', category: 'Angle of Attack', difficulty: 3, type: 'flashcard',
+        question: 'What is the difference between pitch-regulated and stall-regulated turbines?',
+        answer: 'Pitch-regulated actively rotates blades to control power; stall-regulated uses fixed blade shape that passively stalls in high winds',
+        explanation: 'Pitch regulation gives more precise control and is used in most modern large turbines. Stall regulation is simpler and cheaper but less precise. Some turbines use "active stall" which combines both approaches.'
     },
 ];
 
@@ -193,6 +282,91 @@ export const reynoldsNumberQuestions = [
         id: 're10', category: 'Reynolds Number', difficulty: 2, type: 'fill-blank',
         question: 'The Reynolds number is a _____ number, meaning it has no units.',
         answer: 'dimensionless', explanation: 'Because Re is a ratio of forces (inertial/viscous), all the units cancel out. It\'s just a pure number that characterizes the flow regime.'
+    },
+    // New Reynolds Number questions — especially more advanced (difficulty 3) for matching
+    {
+        id: 're11', category: 'Reynolds Number', difficulty: 3, type: 'flashcard',
+        question: 'What is the transition Reynolds number for airfoils?',
+        answer: 'Approximately 500,000 — below this flow tends to be laminar, above it becomes turbulent',
+        explanation: 'For airfoils, the transition from laminar to turbulent flow typically occurs around Re = 500,000. KidWind models operate well below this (~50,000-100,000), meaning mostly laminar flow with easy separation.'
+    },
+    {
+        id: 're12', category: 'Reynolds Number', difficulty: 3, type: 'multiple-choice',
+        question: 'A full-scale wind turbine blade tip has Re ≈ 6,000,000. A KidWind model has Re ≈ 50,000. What does this difference imply?',
+        choices: ['The KidWind model is more efficient', 'The full-scale blade has much more turbulent flow and better-attached airflow', 'They perform identically', 'The KidWind model generates more lift per unit area'],
+        answer: 'The full-scale blade has much more turbulent flow and better-attached airflow',
+        explanation: 'At high Re, the turbulent boundary layer stays attached to the blade better, which actually helps maintain lift. At the low Re of KidWind models, the laminar boundary layer separates easily, causing more drag and less lift.'
+    },
+    {
+        id: 're13', category: 'Reynolds Number', difficulty: 3, type: 'flashcard',
+        question: 'What is a laminar separation bubble?',
+        answer: 'A region where laminar flow separates from the surface, transitions to turbulent, then reattaches',
+        explanation: 'At low Reynolds numbers (like KidWind models), the laminar boundary layer can separate due to an adverse pressure gradient. The separated flow transitions to turbulent and may reattach, forming a "bubble" that increases drag.'
+    },
+    {
+        id: 're14', category: 'Reynolds Number', difficulty: 1, type: 'flashcard',
+        question: 'What does "ρ" (rho) represent in the Reynolds number formula?',
+        answer: 'The density of the fluid (for air, approximately 1.2 kg/m³ at sea level)',
+        explanation: 'Air density (ρ) is how much mass is in a given volume of air. Denser air has higher Reynolds numbers. Air density decreases with altitude, which is why high-altitude wind turbines face different Re conditions.'
+    },
+    {
+        id: 're15', category: 'Reynolds Number', difficulty: 2, type: 'true-false',
+        question: 'Cold air produces a higher Reynolds number than warm air at the same speed.',
+        answer: true, explanation: 'Cold air is denser (higher ρ) and has lower viscosity (lower μ). Both of these changes increase Re = ρvL/μ. So cold air produces higher Reynolds numbers and more turbulent flow.'
+    },
+    {
+        id: 're16', category: 'Reynolds Number', difficulty: 3, type: 'flashcard',
+        question: 'Why do some KidWind competitors add "turbulators" (like tape strips) to their blades?',
+        answer: 'Turbulators trip the boundary layer from laminar to turbulent, which can help it stay attached and reduce drag at low Re',
+        explanation: 'At low Reynolds numbers, the laminar boundary layer separates easily. A small strip of tape or rough surface intentionally triggers turbulent flow, which paradoxically sticks to the blade better, reducing the separation bubble and overall drag.'
+    },
+    {
+        id: 're17', category: 'Reynolds Number', difficulty: 3, type: 'multiple-choice',
+        question: 'Which has a higher Reynolds number?',
+        choices: ['A hummingbird\'s wing in flight', 'A Boeing 747 wing at cruising speed', 'Both are the same', 'Neither has a Reynolds number'],
+        answer: 'A Boeing 747 wing at cruising speed',
+        explanation: 'The 747 has massive chord length (~10m) and high speed (~250 m/s), giving Re in the hundreds of millions. A hummingbird wing is tiny (~2cm) and slow, giving Re around 10,000. This huge difference means very different aerodynamic behavior.'
+    },
+    {
+        id: 're18', category: 'Reynolds Number', difficulty: 2, type: 'multiple-choice',
+        question: 'What is the "characteristic length" (L) used for Reynolds number in wind turbine blades?',
+        choices: ['The blade length', 'The tower height', 'The chord length (width) of the blade', 'The turbine diameter'],
+        answer: 'The chord length (width) of the blade', explanation: 'For airfoils, the characteristic length L is the chord length — the distance from leading edge to trailing edge. Since chord length varies along the blade, Re also varies along the blade.'
+    },
+    {
+        id: 're19', category: 'Reynolds Number', difficulty: 3, type: 'formula',
+        question: 'A KidWind blade has chord = 0.03 m, tip speed = 15 m/s, air density = 1.2 kg/m³, viscosity = 1.8 × 10⁻⁵ Pa·s. What is the Reynolds number at the tip?',
+        answer: '30000', formula: 'Re = ρvL/μ = (1.2 × 15 × 0.03) / (1.8 × 10⁻⁵)',
+        units: '(dimensionless)', explanation: 'Re = (1.2 × 15 × 0.03) / 0.000018 = 0.54 / 0.000018 = 30,000. This is a very low Reynolds number, typical of KidWind models, where viscous effects dominate.'
+    },
+    {
+        id: 're20', category: 'Reynolds Number', difficulty: 1, type: 'multiple-choice',
+        question: 'What does "μ" (mu) represent in the Reynolds number formula?',
+        choices: ['Velocity', 'Density', 'Dynamic viscosity (the stickiness of the fluid)', 'Mass'],
+        answer: 'Dynamic viscosity (the stickiness of the fluid)', explanation: 'Dynamic viscosity (μ) measures how "sticky" or resistant to flow a fluid is. Honey has high viscosity, air has low viscosity. Higher viscosity means lower Reynolds number and more laminar flow.'
+    },
+    {
+        id: 're21', category: 'Reynolds Number', difficulty: 3, type: 'true-false',
+        question: 'At very low Reynolds numbers, increasing surface roughness on a blade always decreases performance.',
+        answer: false, explanation: 'At very low Re (like KidWind models), adding surface roughness (turbulators) can actually IMPROVE performance by tripping the boundary layer to turbulent, helping airflow stay attached and reducing the laminar separation bubble.'
+    },
+    {
+        id: 're22', category: 'Reynolds Number', difficulty: 3, type: 'flashcard',
+        question: 'How does altitude affect the Reynolds number?',
+        answer: 'Higher altitude means lower air density (ρ), which decreases the Reynolds number',
+        explanation: 'At higher altitudes, air is thinner (less dense). Since Re = ρvL/μ, lower density means lower Re. Wind turbines at high altitudes face different aerodynamic conditions than those at sea level.'
+    },
+    {
+        id: 're23', category: 'Reynolds Number', difficulty: 2, type: 'flashcard',
+        question: 'Who was Osborne Reynolds?',
+        answer: 'A 19th-century scientist who studied fluid flow and identified the dimensionless number that predicts laminar vs. turbulent flow',
+        explanation: 'Osborne Reynolds (1842-1912) was an Irish-British engineer who conducted famous pipe flow experiments in 1883. He injected dye into flowing water and observed it transition from smooth (laminar) to chaotic (turbulent) flow.'
+    },
+    {
+        id: 're24', category: 'Reynolds Number', difficulty: 3, type: 'flashcard',
+        question: 'What is an "adverse pressure gradient" and why does it matter at low Reynolds numbers?',
+        answer: 'A region where pressure increases downstream, causing the boundary layer to slow and potentially separate from the surface',
+        explanation: 'On the back half of an airfoil, pressure increases. At low Re, the weak laminar boundary layer cannot overcome this pressure rise and separates. At high Re, the energetic turbulent boundary layer pushes through. This is why low-Re airfoils need special design.'
     },
 ];
 
@@ -271,5 +445,53 @@ export const electricalQuestions = [
         id: 'elec13', category: 'Electrical Fundamentals', difficulty: 2, type: 'true-false',
         question: 'Resistance in a circuit is measured in watts.',
         answer: false, explanation: 'Resistance is measured in ohms (Ω). Watts measure power. Higher resistance restricts the flow of current, like a narrow pipe restricts water flow.'
+    },
+    // New electrical questions
+    {
+        id: 'elec14', category: 'Electrical Fundamentals', difficulty: 1, type: 'multiple-choice',
+        question: 'What is resistance in an electrical circuit?',
+        choices: ['The speed of electricity', 'Opposition to the flow of current', 'The amount of voltage', 'The direction of current'],
+        answer: 'Opposition to the flow of current', explanation: 'Resistance (measured in ohms, Ω) opposes current flow, like friction in a pipe. Thin wires have more resistance than thick wires. High resistance means less current for the same voltage.'
+    },
+    {
+        id: 'elec15', category: 'Electrical Fundamentals', difficulty: 2, type: 'flashcard',
+        question: 'What is the difference between a series circuit and a parallel circuit?',
+        answer: 'Series: components connected end-to-end (one path); Parallel: components connected side-by-side (multiple paths)',
+        explanation: 'In series, current flows through each component one after another. If one breaks, all stop. In parallel, current splits across multiple paths. If one breaks, others still work. Batteries in series add voltages; in parallel add current capacity.'
+    },
+    {
+        id: 'elec16', category: 'Electrical Fundamentals', difficulty: 3, type: 'multiple-choice',
+        question: 'Two 6V batteries are connected in series. What is the total voltage?',
+        choices: ['3V', '6V', '12V', '36V'],
+        answer: '12V', explanation: 'In series, voltages add up: 6V + 6V = 12V. Series connection is like stacking batteries end-to-end. The current capacity stays the same, but voltage doubles.'
+    },
+    {
+        id: 'elec17', category: 'Electrical Fundamentals', difficulty: 3, type: 'flashcard',
+        question: 'What is electrical efficiency?',
+        answer: 'The ratio of useful electrical output to total energy input, expressed as a percentage',
+        explanation: 'Efficiency = (useful output / total input) × 100%. A generator that converts 60 joules of mechanical energy into 48 joules of electrical energy is 80% efficient. Energy is "lost" to heat from friction and resistance.'
+    },
+    {
+        id: 'elec18', category: 'Electrical Fundamentals', difficulty: 2, type: 'multiple-choice',
+        question: 'What happens to current if you double the resistance but keep voltage the same?',
+        choices: ['Current doubles', 'Current is halved', 'Current stays the same', 'Current becomes zero'],
+        answer: 'Current is halved', explanation: 'From Ohm\'s Law (I = V/R), if R doubles and V stays the same, current I is halved. More resistance means less current, just like a narrower pipe allows less water flow.'
+    },
+    {
+        id: 'elec19', category: 'Electrical Fundamentals', difficulty: 1, type: 'true-false',
+        question: 'Electrons flow from the positive terminal to the negative terminal of a battery.',
+        answer: false, explanation: 'Electrons actually flow from negative to positive (electron flow). Conventional current, used in most diagrams, flows from positive to negative. This historical convention was established before electrons were discovered.'
+    },
+    {
+        id: 'elec20', category: 'Electrical Fundamentals', difficulty: 3, type: 'formula',
+        question: 'A generator produces 4.5V and 0.8A. What is the load resistance?',
+        answer: '5.625', formula: 'R = V/I = 4.5/0.8', units: 'ohms',
+        explanation: 'Using Ohm\'s Law rearranged: R = V/I = 4.5V / 0.8A = 5.625Ω.'
+    },
+    {
+        id: 'elec21', category: 'Electrical Fundamentals', difficulty: 3, type: 'flashcard',
+        question: 'What is the relationship between power, voltage, and resistance?',
+        answer: 'P = V²/R — power equals voltage squared divided by resistance',
+        explanation: 'This is derived by combining P = V × I with Ohm\'s Law (I = V/R). So P = V × (V/R) = V²/R. It shows that for a given resistance, power increases with the square of voltage.'
     },
 ];
